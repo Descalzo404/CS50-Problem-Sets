@@ -1,0 +1,2 @@
+SELECT people.name FROM people JOIN stars ON stars.person_id = people.id WHERE stars.movie_id in (SELECT movies.id FROM movies WHERE movies.id IN (SELECT stars.movie_id FROM stars WHERE stars.person_id in (SELECT people.id FROM people WHERE people.name = "Kevin Bacon" and people.birth = 1958)))
+EXCEPT SELECT name FROM people WHERE people.name = "Kevin Bacon" AND people.birth = 1958;

@@ -1,0 +1,1 @@
+SELECT title FROM movies JOIN stars on movies.id = stars.movie_id WHERE id IN (SELECT movie_id FROM stars JOIN People ON people.id = stars.person_id WHERE people.name = "Johnny Depp") and id IN (SELECT movie_id FROM stars JOIN People ON people.id = stars.person_id WHERE people.name = "Helena Bonham Carter") GROUP BY title;
